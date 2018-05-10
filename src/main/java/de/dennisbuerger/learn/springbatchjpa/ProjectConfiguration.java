@@ -33,8 +33,8 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
-@ComponentScan(basePackages = { "de.dennisbuerger.test.springbatch" })
-@EnableJpaRepositories("de.dennisbuerger.test.springbatch")
+@ComponentScan(basePackages = { "de.dennisbuerger.learn.springbatchjpa" })
+@EnableJpaRepositories("de.dennisbuerger.learn.springbatchjpa")
 @EnableAutoConfiguration
 @EnableTransactionManagement
 @EnableBatchProcessing
@@ -59,7 +59,7 @@ public class ProjectConfiguration {
 	public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
 		LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
 		em.setDataSource(dataSource());
-		em.setPackagesToScan(new String[] { "de.dennisbuerger.test.springbatch" });
+		em.setPackagesToScan(new String[] { "de.dennisbuerger.learn.springbatchjpa" });
 
 		JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
 		em.setJpaVendorAdapter(vendorAdapter);
